@@ -1,0 +1,57 @@
+﻿@model BusinessEntities.UserGroupEntities
+@{
+    ViewBag.Title = "CRUDUserGroup";
+}
+<h1>
+    View/Edit User Group</h1>
+<div class="form-block">
+    @{
+        <div>
+            @if (!String.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                <div id="dialog-confirm" style="display: none">
+                    <p>
+                        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+                        @ViewBag.SuccessMessage
+                    </p>
+                </div>
+                <script>
+                    $(function () {
+                        $("#dialog-confirm").dialog({ height:100,model: true });
+                    });
+                </script>
+            }
+        </div> 
+    }
+
+    @using (Html.BeginForm())
+    { 
+        <fieldset> 
+        <div class="fleft" style="width:100%">
+            <div class="row">
+                <label>
+                    User Group
+                </label>
+                @Html.HiddenFor(m => m.UserGroupId) 
+                @Html.EditorFor(m => m.UserGroupName)  
+                @Html.ValidationMessageFor(m => m.UserGroupName)  
+                <div class="clear">
+                </div>
+            </div>
+            <div class="row">
+                <label>
+                    Status</label>
+                @Html.CheckBoxFor(m => m.Active)
+                <div class="clear">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Save" />
+                @Html.ActionLink("Back to List", "ViewUserGroup")
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        </fieldset> 
+    }
+</div>

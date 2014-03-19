@@ -1,0 +1,57 @@
+﻿@model BusinessEntities.UserTypeEntities
+@{
+    ViewBag.Title = "CRUDUserType";
+}
+ 
+<div class="form-block">
+    @{
+        <div>
+            @if (!String.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                <div id="dialog-confirm" style="display: none">
+                    <p>
+                        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+                        @ViewBag.SuccessMessage
+                    </p>
+                </div>
+                <script>
+                    $(function () {
+                        $("#dialog-confirm").dialog({ height: 100, model: true });
+                    });
+                </script>
+            }
+        </div> 
+    }
+
+    @using (Html.BeginForm())
+    { 
+        <fieldset>
+     
+        <div class="fleft" style="width:100%">
+            <div class="row">
+                <label>
+                    User Type
+                </label>
+                @Html.HiddenFor(m => m.UserTypeId) 
+                @Html.EditorFor(m => m.UserTypeName)  
+                @Html.ValidationMessageFor(m => m.UserTypeName, "*")  
+                <div class="clear">
+                </div>
+            </div>
+            <div class="row">
+                <label>
+                    Status</label>
+                @Html.CheckBoxFor(m => m.Active)
+                <div class="clear">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Save" />
+                @Html.ActionLink("Back to List", "ViewUserType")
+                <div class="clear">
+                </div>
+            </div>
+        </div>
+        </fieldset> 
+    }
+</div>

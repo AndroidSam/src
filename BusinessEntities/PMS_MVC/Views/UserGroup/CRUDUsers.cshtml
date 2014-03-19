@@ -1,0 +1,211 @@
+﻿@model BusinessEntities.UserEntities
+@{
+    ViewBag.Title = "CRUDUsers";
+}
+<div class="form-block">
+    @{
+        <div>
+            @if (!String.IsNullOrEmpty(ViewBag.SuccessMessage))
+            {
+                <div id="dialog-confirm" style="display: none">
+                    <p>
+                        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>
+                        @ViewBag.SuccessMessage
+                    </p>
+                </div>
+                <script>
+                    $(function () {
+                        $("#dialog-confirm").dialog({ height: 100, model: true });
+                    });
+                </script>
+            }
+        </div> 
+    } 
+    @using (Html.BeginForm())
+    { 
+        <div style="float: right">
+            <input id="uploadImage" type="file" name="myPhoto" onchange="PreviewImage();" />
+            @if (!string.IsNullOrEmpty(ViewBag.Avatar))
+            { 
+                string imageSrc =  Model.Avatar;
+                <img id="uploadPreview" style="width: 100px; height: 100px;" src="@imageSrc"/>
+            }
+            else
+            {
+            <img id="uploadPreview" style="width: 100px; height: 100px;" />
+            } 
+           
+            <div class="clear">
+            </div>
+            <script type="text/javascript">
+
+                function PreviewImage() {
+                    var oFReader = new FileReader();
+                    oFReader.readAsDataURL(document.getElementById("uploadImage").files[0]);
+
+                    oFReader.onload = function (oFREvent) {
+                        document.getElementById("uploadPreview").src = oFREvent.target.result;
+                        alert(oFREvent.target.result);
+                        $('.HiddenAvatar').val(oFREvent.target.result);
+                    };
+                };
+                 
+            </script>
+        </div>
+        <div class="clear">
+        </div>
+        <fieldset>
+            <div class="fleft" style="width: 49%">
+                <div class="row">
+                    <label>
+                        Username
+                    </label>
+
+                    @Html.HiddenFor(m => m.Avatar, new { @class = "HiddenAvatar" })
+                    @Html.HiddenFor(m => m.UserId)
+                    @Html.EditorFor(m => m.Username)
+                    @Html.ValidationMessageFor(m => m.Username, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        First Name
+                    </label>
+                    @Html.EditorFor(m => m.FirstName)
+                    @Html.ValidationMessageFor(m => m.FirstName, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Email
+                    </label>
+                    @Html.EditorFor(m => m.EmailAddress)
+                    @Html.ValidationMessageFor(m => m.EmailAddress, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Designation
+                    </label>
+                    @Html.DropDownListFor(m => m.DesignationEntity.EmployeeDesigId, (SelectList)ViewBag.Designation, "-- select --")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        User Type</label>
+                    @Html.DropDownListFor(m => m.UserTypeEntity.UserTypeId, (SelectList)ViewBag.UserType, "-- select --")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        DOB</label>
+                    @Html.TextBoxFor(m => m.DOB, new { @class = "datepicker" })
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Contact no
+                    </label>
+                    @Html.EditorFor(m => m.ContactNumber)
+                    @Html.ValidationMessageFor(m => m.ContactNumber, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Blood Group
+                    </label>
+                    @Html.DropDownListFor(m => m.BloodGroupEntity.BloodGroupID, (SelectList)ViewBag.BloodGroup, "-- select --")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Status</label>
+                    @Html.CheckBoxFor(m => m.Active)
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Save"  id="btnsave"/>
+                    @Html.ActionLink("Back to List", "ViewUser")
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+            <div class="fleft fmargin" style="width: 49%">
+                <div class="row">
+                    <label>
+                        Employee Id
+                    </label>
+                    @Html.EditorFor(m => m.EmployeeId)
+                    @Html.ValidationMessageFor(m => m.EmployeeId, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Last Name
+                    </label>
+                    @Html.EditorFor(m => m.LastName)
+                    @Html.ValidationMessageFor(m => m.LastName, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Password
+                    </label>
+                    @Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        PF Number
+                    </label>
+                    @Html.EditorFor(m => m.PFNumber)
+                    @Html.ValidationMessageFor(m => m.PFNumber, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        User Group</label>
+                    @Html.DropDownListFor(m => m.UserGroupEntity.UserGroupId, (SelectList)ViewBag.UserGroup, "-- select --")
+                     @Html.ValidationMessageFor(m => m.UserGroupEntity.UserGroupId, "*")
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        DOJ</label>
+                    @Html.TextBoxFor(m => m.DOJ, new { @class = "datepicker" })
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class="row">
+                    <label>
+                        Address
+                    </label>
+                    @Html.TextAreaFor(m => m.Address)
+                    <div class="clear">
+                    </div>
+                </div>
+        </fieldset> 
+    }
+    <script>
+        $(document).ready(function () {
+
+            $('.datepicker').datepicker({ dateFormat: "dd/mm/yy" });
+         
+        });
+    </script>
+</div>

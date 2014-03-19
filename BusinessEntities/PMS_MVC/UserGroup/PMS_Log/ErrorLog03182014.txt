@@ -1,0 +1,30 @@
+---------------------------------------------------------------------
+DateTime: 3/18/2014 6:13:59 PM
+StackTrace:    at WcfGetService.DAL_Logic.DALCRUDUserGroup.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\DAL_Logic\DALCRUDUserGroup.cs:line 67
+Message: Index was outside the bounds of the array.
+ErrorLogEntryType : Error 
+ErrorLevel : High 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+DateTime: 3/18/2014 6:13:59 PM
+StackTrace:    at WcfGetService.DAL_Logic.DALCRUDUserGroup.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\DAL_Logic\DALCRUDUserGroup.cs:line 88
+   at WcfGetService.Getservice.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\GetService\Getservice.svc.cs:line 141
+Message: Index was outside the bounds of the array.
+ErrorLogEntryType : Error 
+ErrorLevel : High 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+DateTime: 3/18/2014 6:16:57 PM
+StackTrace:    at WcfGetService.DAL_Logic.DALCRUDUserGroup.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\DAL_Logic\DALCRUDUserGroup.cs:line 67
+Message: Index was outside the bounds of the array.
+ErrorLogEntryType : Error 
+ErrorLevel : High 
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+DateTime: 3/18/2014 6:16:57 PM
+StackTrace:    at WcfGetService.DAL_Logic.DALCRUDUserGroup.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\DAL_Logic\DALCRUDUserGroup.cs:line 88
+   at WcfGetService.Getservice.InsertUpdateUsers(UserEntities User_Entity) in F:\Muthuram\IPMT\MVC-Version1.0.0\src\BusinessEntities\WcfGetService\GetService\Getservice.svc.cs:line 141
+Message: Index was outside the bounds of the array.
+ErrorLogEntryType : Error 
+ErrorLevel : High 
+---------------------------------------------------------------------

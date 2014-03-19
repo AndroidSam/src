@@ -1,0 +1,413 @@
+* {
+	margin:0;
+	padding:0;
+}
+
+body {
+	background-color:#f1f1f1;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#535353;
+}
+ul li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+h1 {
+	font-weight:normal;
+	margin:0;
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+/*commen style*/
+input, label, select {
+	display:block;
+	float:left;
+}
+label {
+	background:url(../Content/img/seprator.png) no-repeat right center;
+	line-height:31px;
+	margin:0 15px 0 0;
+	color:#535353;
+}
+input[type=text], select, input[type=password], input[type=number],textarea {
+	background:#f7f7f7;
+	-moz-box-shadow: inset 3px 1px 12px -6px #e1e1e1;
+	-webkit-box-shadow: inset 3px 1px 12px -6px #e1e1e1;
+	box-shadow: inset 3px 1px 12px -6px #e1e1e1;
+	border:none;
+	outline:none;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#535353;
+	height:31px;
+	line-height:30px;
+} 
+input[type=button]{
+	color:#FFF;
+	background-color:#666;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	padding:0 16px;
+	height:31px;
+	line-height:31px; 
+	outline:none;
+	border:none;
+	cursor:pointer;
+}
+input[type=file]{color:#535353;
+	background-color:#e1e1e1;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	padding:0 16px;
+	height:31px;
+	line-height:31px; 
+	outline:none;
+	border:none;
+	cursor:pointer;
+	margin: 32px 5px;
+}
+input[type=button]:hover {
+	background-color:#555;
+}
+input[type=submit]{
+	color:#FFF;
+	background-color:#666;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size:15px;
+	padding:0 16px;
+	height:31px;
+	line-height:31px;
+	outline:none;
+	border:none;
+	cursor:pointer;
+}
+input[type=submit]:hover {
+	background-color:#555;
+}
+/*layout style*/
+#container {
+	width:100%;
+	margin:5px auto;
+	background-color:#FFFFFF;
+	border-bottom:16px #f1f1f1 solid;
+}
+#header {
+	background:#f1f1f1;
+	padding:0px 16px;
+	position:relative;
+	min-height:56px;
+}
+#header .logo {
+	position:absolute;
+	bottom:-20px;
+}
+#header .navigation {
+	float:right;
+}
+#header .navigation input[type="image"] {
+	margin:8px 0 8px 5px;
+}
+#header .navigation .btn-time {
+	background:#31386b;
+}
+#header .navigation .btn-time:hover {
+	background:#6671c2;
+}
+#header .navigation .btn-home {
+	background:#ff7800;
+}
+#header .navigation .btn-home:hover {
+	background:#f9ab66;
+}
+#header .navigation .btn-calender {
+	background:#215173;
+}
+#header .navigation .btn-calender:hover {
+	background:#469ad6;
+}
+#header .navigation .btn-help {
+	background:#7300a5;
+}
+#header .navigation .btn-help:hover {
+	background:#b92cf7;
+}
+#header .navigation .btn-logout {
+	background:#e11804;
+}
+#header .navigation .btn-logout:hover {
+	background:#fe4432;
+}
+/*content-block*/
+#content-block {
+	padding:38px 36px;
+	min-height:580px;
+}
+#content-block h1 {
+	font-size:17px;
+	color:#31386b;
+	border-bottom:1px #e7e7e7 solid;
+	padding:0 0 9px 0;
+}
+#content-block .form-block {
+	padding:15px 0 35px 0;
+}
+.form-block .row {
+	padding:8px 0;
+}
+.form-block .fleft {
+	width:31%;
+	float:left;
+}
+.form-block .fleft select {width:317px;
+	padding:0 9px;
+	}
+.form-block input[type=text], .form-block input[type=password], .form-block input[type=number] ,textarea{
+	width:300px;
+	padding:0 9px;
+	}
+.form-block .fleft label{
+	width:120px;
+}
+.form-block .fmargin{
+margin-left:18px;
+}
+.form-block .fleft .selecct-opt{
+	width:112px;
+	height:33px;
+	padding: 4px 0 4px 9px;
+}
+.form-block .fright {
+	width:31%;
+	float:right;
+}
+.form-block .fright label{
+	width:130px;
+	} 
+.form-block .fright input[type="button"]{
+	float:right;
+	margin:0 0 0 8px;
+}
+.form-block .fleft input[type="button"]{
+	float:left;
+	margin:0 0 0 8px;
+}
+.navigation-left{
+position:absolute;
+}
+.navigation-left ul {
+  text-align: left;
+  display: inline;
+  margin: 0;
+  padding: 15px 4px 17px 0;
+  list-style: none;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+}
+.navigation-left ul li {
+  font: bold 12px/18px sans-serif;
+  display: inline-block;
+  margin-right: -4px;
+  position: relative;
+  padding: 15px 20px;
+  background: #fff;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.navigation-left ul li:hover {
+  background: #555;
+  color: #fff;
+}
+.navigation-left ul li ul {
+  padding: 0;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 150px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transiton: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  -transition: opacity 0.2s;
+}
+.navigation-left ul li ul li { 
+  background: #555; 
+  display: block; 
+  color: #fff;
+  text-shadow: 0 -1px 0 #000;
+}
+.navigation-left ul li ul li:hover { background: #666; }
+.navigation-left ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}  
+.navigation-left ul li a{
+ color: #666;
+ text-decoration:none;
+}  
+.navigation-left ul li ul li a{
+ color: #fff;
+ text-decoration:none;
+}  
+.navigation-left ul li:hover >a{
+background: #555;
+color: #FFF;
+} 
+
+/* Styles for Grid Views with Jquery sorting
+-----------------------------------------------------------*/ 
+.Gridstyle table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+.Gridstyle table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+.Gridstyle table a:active,
+.Gridstyle table a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+.Gridstyle table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 1px solid;
+	min-width:500px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+.Gridstyle table th {
+	padding:11px 15px 12px 15px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+.Gridstyle table th:first-child {
+	text-align: left;
+	padding-left:20px;
+}
+.Gridstyle table tr:first-child th:first-child {
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+.Gridstyle table tr:first-child th:last-child {
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+.Gridstyle table tr {
+	text-align: center;
+	padding-left:20px;
+}
+.Gridstyle table td:first-child {
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+}
+.Gridstyle table td {
+	padding:10px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fff,  #fafafa);
+}
+.Gridstyle table tr.even td {
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+.Gridstyle table tr:last-child td {
+	border-bottom:0;
+}
+.Gridstyle table tr:last-child td:first-child {
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+.Gridstyle table tr:last-child td:last-child {
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+.Gridstyle table tr:hover td {
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+} 
+.Gridstyle table.tablesorter thead tr .header{background-image:url(img/bg.png);background-repeat:no-repeat;background-position:center right 5px;cursor:pointer}
+.Gridstyle table.tablesorter thead tr .headerSortUp{background-image:url(img/asc.png)}
+.Gridstyle table.tablesorter thead tr .headerSortDown{background-image:url(img/desc.png)}
+.Gridstyle .pagedisplay{ margin:0 5px 0 20px;} 
+.Gridstyle #pager img{float:left;margin: 5px 5px 0 0px;}
+.Gridstyle .pagesize{ margin-right:5px;}
+/* Styles for Search
+-----------------------------------------------------------*/ 
+#content-block h2 {
+	font-size:14px;
+	color:#31386b; 
+	padding:0 0 9px 0;
+}
+.Gridstyle .search-style{margin:20px;}
+.search-style input[type=text]{
+	width:300px;
+	padding:0 9px;
+	}
+/*------------------------------------------------------- */
+ .search-style a,.fleft a{
+color: #FFF;
+background-color: #666;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+font-size: 15px;
+padding: 5px 16px 6px 15px;
+margin-left: 5px;
+height: 31px;
+line-height: 31px;
+outline: none;
+border: none;
+cursor: pointer;
+text-decoration:none;
+}
+.search-style a:hover,.fleft a:hover{background-color: #555;} 
+ .field-validation-error{padding: 5px;font-size: 15px;}
+ 
+.alert-box {
+ color: red;
+border-radius: 10px;
+font-family: Tahoma,Geneva,Arial,sans-serif;
+font-size: 12px;
+padding: 5px 5px 5px 36px;
+margin: 10px;
+}

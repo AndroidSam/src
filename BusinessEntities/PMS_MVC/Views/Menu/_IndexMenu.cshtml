@@ -1,0 +1,31 @@
+﻿@model BusinessEntities.MenuEntities
+@helper CreateMenu(Guid nid)
+{ 
+    List<BusinessEntities.MenuEntities> UserMenu = ViewBag.UserMenu;
+    var UsermenuChild = UserMenu.Where(x => x.MainMenuId == nid);
+    var ChildCount = UsermenuChild.Count();
+    if (ChildCount > 0)
+    { 
+    <ul>
+        @foreach (BusinessEntities.MenuEntities _Usermenu in UsermenuChild)
+        {
+            <li>
+                @Html.ActionLink(@_Usermenu.MenuName, @_Usermenu.View, @_Usermenu.Controller)
+                @CreateMenu(@_Usermenu.MenuId)
+            </li>
+        }
+    </ul>
+    }
+}
+<div class="navigation-left">
+    @CreateMenu(Guid.Empty)
+    <div class="clear">
+    </div>
+</div>
+<div class="clear">
+</div>
+<div class="navigation">
+    <input type="image" src=@Url.Content("~/Content/img/icon-logout.png") class="btn-logout" />
+    <div class="clear">
+    </div>
+</div>
